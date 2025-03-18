@@ -9,7 +9,7 @@ import React from 'react';
 // };
 
 
-// testing up everything hahahahahaha
+// testing up everything hahahahahahahaha
 type ResourceType = 'Course Material' | 'Past Question' | 'Textbook' | 'Guide' | 'Template' | 'Video';
 type ResourceFaculty = 'All' | 'Science' | 'Arts' | 'Business' | 'Law' | 'Education' | 'Social Sciences' | 'Engineering';
 
