@@ -5,6 +5,12 @@ import AnimatedElement from '@/components/ui/animated-element';
 import ModernCard from '@/components/ui/modern-card';
 import ScrollReveal from '@/components/ui/scroll-reveal';
 import ModernButton from '@/components/ui/modern-button';
+import React from 'react';
+
+export const metadata = {
+  title: 'News',
+  description: 'Latest news and updates',
+};
 
 type NewsItem = {
   id: string;
@@ -99,9 +105,24 @@ export default function NewsPage() {
   const featuredNews = newsItems.find(item => item.featured);
 
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-4">News</h1>
-      <p>This is the News page content.</p>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">Latest News</h1>
+      <p className="mb-4">
+        Stay updated with the latest announcements, articles, and news from our team.
+      </p>
+      <div className="space-y-6">
+        <article className="bg-white p-6 rounded-lg shadow-sm">
+          <h2 className="text-xl font-semibold mb-2">News Article Title</h2>
+          <p className="text-sm text-gray-500 mb-4">Published on: June 10, 2023</p>
+          <p>News content coming soon...</p>
+        </article>
+        
+        <article className="bg-white p-6 rounded-lg shadow-sm">
+          <h2 className="text-xl font-semibold mb-2">Another News Article</h2>
+          <p className="text-sm text-gray-500 mb-4">Published on: May 28, 2023</p>
+          <p>More news content coming soon...</p>
+        </article>
+      </div>
     </div>
   );
 }

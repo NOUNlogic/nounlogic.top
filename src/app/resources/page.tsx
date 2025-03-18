@@ -5,6 +5,12 @@ import ModernCard from '@/components/ui/modern-card';
 import ModernButton from '@/components/ui/modern-button';
 import AnimatedElement from '@/components/ui/animated-element';
 import ScrollReveal from '@/components/ui/scroll-reveal';
+import React from 'react';
+
+export const metadata = {
+  title: 'Resources',
+  description: 'Helpful resources and materials',
+};
 
 type ResourceType = 'Course Material' | 'Past Question' | 'Textbook' | 'Guide' | 'Template' | 'Video';
 type ResourceFaculty = 'All' | 'Science' | 'Arts' | 'Business' | 'Law' | 'Education' | 'Social Sciences' | 'Engineering';
@@ -205,9 +211,37 @@ export default function ResourcesPage() {
   };
 
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-4">Resources</h1>
-      <p>This is the Resources page content.</p>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">Resources</h1>
+      <p className="mb-6">
+        Explore our collection of resources, guides, and materials to help you get the most out of our services.
+      </p>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="bg-white p-6 rounded-lg shadow-sm">
+          <h2 className="text-xl font-semibold mb-4">Guides</h2>
+          <p>Comprehensive guides to help you navigate our platform.</p>
+          <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+            View Guides
+          </button>
+        </div>
+        
+        <div className="bg-white p-6 rounded-lg shadow-sm">
+          <h2 className="text-xl font-semibold mb-4">Documentation</h2>
+          <p>Technical documentation and API references.</p>
+          <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+            View Docs
+          </button>
+        </div>
+        
+        <div className="bg-white p-6 rounded-lg shadow-sm">
+          <h2 className="text-xl font-semibold mb-4">Templates</h2>
+          <p>Ready-to-use templates and examples.</p>
+          <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+            View Templates
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

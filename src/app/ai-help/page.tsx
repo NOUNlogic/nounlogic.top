@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import AnimatedElement from '@/components/ui/animated-element';
 import ModernCard from '@/components/ui/modern-card';
 import ModernButton from '@/components/ui/modern-button';
+import React from 'react';
 
 type Message = {
   id: string;
@@ -20,11 +21,22 @@ const SAMPLE_RESPONSES = [
   "The assignment for BIO304 is due next Friday. Make sure to include both the practical report and the theoretical analysis in your submission.",
 ];
 
+export const metadata = {
+  title: 'AI Help',
+  description: 'Get AI-powered assistance',
+};
+
 export default function AIHelpPage() {
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-4">AI Help</h1>
-      <p>Welcome to the AI Help section. How can we assist you today?</p>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">AI Help Center</h1>
+      <p className="mb-4">
+        Welcome to our AI Help section. Here you can find resources and assistance powered by artificial intelligence.
+      </p>
+      <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
+        <h2 className="text-xl font-semibold mb-4">How can we assist you today?</h2>
+        <p>Content for the AI Help page coming soon...</p>
+      </div>
     </div>
   );
 }
