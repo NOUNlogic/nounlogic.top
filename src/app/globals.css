@@ -65,11 +65,16 @@ body {
 
 /* Animation utilities */
 .fade-in {
-  animation: fadeIn 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .slide-up {
-  animation: slideUp 0.5s ease-in-out;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.slide-up.animate-active {
+  transform: translateY(0);
 }
 
 .slide-down {
@@ -82,6 +87,14 @@ body {
 
 .bounce {
   animation: bounce 1s ease infinite;
+}
+
+.animate-initial {
+  opacity: 0;
+}
+
+.animate-active {
+  opacity: 1 !important;
 }
 
 /* Button hover effects */

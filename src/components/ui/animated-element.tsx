@@ -27,13 +27,11 @@ export default function AnimatedElement({
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setTimeout(() => {
-              entry.target.classList.add(animation);
+              entry.target.classList.add('animate-active');
               if (once) {
                 observer.unobserve(entry.target);
               }
             }, delay);
-          } else if (!once) {
-            entry.target.classList.remove(animation);
           }
         });
       },
@@ -52,7 +50,7 @@ export default function AnimatedElement({
   }, [animation, delay, threshold, once]);
 
   return (
-    <div ref={ref} className={`opacity-0 ${className}`}>
+    <div ref={ref} className={`animate-initial ${animation} ${className}`}>
       {children}
     </div>
   );
