@@ -1,10 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import ModernCard from '@/components/ui/modern-card';
-import ModernButton from '@/components/ui/modern-button';
-import AnimatedElement from '@/components/ui/animated-element';
-import ScrollReveal from '@/components/ui/scroll-reveal';
 import React from 'react';
 
 // export const metadata = {
