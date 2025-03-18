@@ -1,10 +1,7 @@
 'use client';
 
+import image from 'next/image';
 import { useState } from 'react';
-import AnimatedElement from '@/components/ui/animated-element';
-import ModernCard from '@/components/ui/modern-card';
-import ScrollReveal from '@/components/ui/scroll-reveal';
-import ModernButton from '@/components/ui/modern-button';
 import React from 'react';
 
 export const metadata = {
@@ -43,8 +40,8 @@ export default function NewsPage() {
       title: 'New Faculty of Computing Sciences Launches Advanced Degree Programs',
       category: 'Academic',
       date: 'May 10, 2024',
-      excerpt: 'The Faculty of Computing Sciences has announced new Master's and Doctoral programs in Artificial Intelligence and Data Science, set to begin in the next academic session.',
-      image: '/images/news/computing.jpg',
+      excerpt: 'The Faculty of Computing Sciences has announced new Masters and Doctoral programs in Artificial Intelligence and Data Science, set to begin in the next academic session.',
+      image: '/images/news/computing.jpg'
     },
     {
       id: '3',
