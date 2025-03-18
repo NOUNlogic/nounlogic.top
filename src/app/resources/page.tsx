@@ -210,32 +210,32 @@ export default function ResourcesPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Resources</h1>
-      <p className="mb-6">
+      <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-50">Resources</h1>
+      <p className="mb-6 text-gray-700 dark:text-gray-300">
         Explore our collection of resources, guides, and materials to help you get the most out of our services.
       </p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow-sm">
-          <h2 className="text-xl font-semibold mb-4">Guides</h2>
-          <p>Comprehensive guides to help you navigate our platform.</p>
-          <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+          <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Guides</h2>
+          <p className="text-gray-700 dark:text-gray-300">Comprehensive guides to help you navigate our platform.</p>
+          <button className="mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300 shadow-md">
             View Guides
           </button>
         </div>
         
-        <div className="bg-white p-6 rounded-lg shadow-sm">
-          <h2 className="text-xl font-semibold mb-4">Documentation</h2>
-          <p>Technical documentation and API references.</p>
-          <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+          <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Documentation</h2>
+          <p className="text-gray-700 dark:text-gray-300">Technical documentation and API references.</p>
+          <button className="mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300 shadow-md">
             View Docs
           </button>
         </div>
         
-        <div className="bg-white p-6 rounded-lg shadow-sm">
-          <h2 className="text-xl font-semibold mb-4">Templates</h2>
-          <p>Ready-to-use templates and examples.</p>
-          <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+          <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Templates</h2>
+          <p className="text-gray-700 dark:text-gray-300">Ready-to-use templates and examples.</p>
+          <button className="mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300 shadow-md">
             View Templates
           </button>
         </div>

@@ -6,14 +6,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">NOUN Student Hub</h3>
+            <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-100">NOUN Student Hub</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">
               Connecting students of the National Open University of Nigeria
             </p>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-100">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/about" className="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
+            <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-100">Connect With Us</h3>
             <div className="flex space-x-4">
               <a href="https://facebook.com" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                 <span className="sr-only">Facebook</span>

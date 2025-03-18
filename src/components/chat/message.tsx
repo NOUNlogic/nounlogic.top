@@ -1,47 +1,34 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import React from 'react';
 
-type MessageProps = {
+interface MessageProps {
   content: string;
   timestamp: string;
   isOwn: boolean;
   sender?: string;
-};
+}
 
 export default function Message({ content, timestamp, isOwn, sender }: MessageProps) {
-  const messageRef = useRef<HTMLDivElement>(null);
-
   return (
-    <div 
-      ref={messageRef}
-      className={`flex ${isOwn ? 'justify-end' : 'justify-start'} mb-4`}
-    >
-      <div
-        className={`
-          max-w-[70%] rounded-2xl p-4 shadow-lg
-          transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5
-          ${isOwn
-            ? 'bg-primary text-white'
-            : 'glass-morphism dark:bg-gray-800/90'
-          }
-        `}
-      >
+    <div className={`flex ${isOwn ? 'justify-end' : 'justify-start'} mb-4`}>
+      <div className={`max-w-[75%] ${isOwn ? 'order-2' : 'order-1'}`}>
         {!isOwn && sender && (
-          <p className="text-xs text-gray-600 dark:text-gray-400 mb-1 font-medium">{sender}</p>
+          <span className="text-xs text-gray-500 dark:text-gray-400 ml-2 mb-1 block">{sender}</span>
         )}
-        <p className="text-sm">{content}</p>
-        <p className="text-xs text-right mt-1 opacity-70">{timestamp}</p>
+        <div
+          className={`rounded-2xl py-2 px-4 ${
+            isOwn
+              ? 'bg-blue-600 text-white rounded-br-none'
+              : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-bl-none'
+          } shadow-sm`}
+        >
+          <p>{content}</p>
+        </div>
+        <div className={`text-xs text-gray-500 dark:text-gray-400 mt-1 ${isOwn ? 'text-right mr-2' : 'ml-2'}`}>
+          {timestamp}
+        </div>
       </div>
     </div>
   );
 }
-
-// Add to globals.css
-// @keyframes appear {
-//   from { opacity: 0; transform: translateY(10px); }
-//   to { opacity: 1; transform: translateY(0); }
-// }
-// .animate-message {
-//   animation: appear 0.3s ease-out forwards;
-// }

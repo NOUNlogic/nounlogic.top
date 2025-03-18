@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ScrollToTop from "@/components/ui/scroll-to-top";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,16 +27,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{"--primary": "#3b82f6", "--primary-dark": "#2563eb"} as any}>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex flex-col min-h-screen">
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          <ScrollToTop />
-        </div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+            <ScrollToTop />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

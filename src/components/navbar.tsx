@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import ModernButton from "@/components/ui/modern-button";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "@/components/ui/theme-toggle";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,7 +29,7 @@ export default function Navbar() {
 
   return (
     <nav 
-      className={`app-bar sticky top-0 z-40 transition-all duration-300 ${
+      className={`app-bar sticky top-0 z-40 transition-all duration-300 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 ${
         scrolled ? 'py-2 shadow-md' : 'py-4'
       }`}
     >
@@ -90,24 +91,22 @@ export default function Navbar() {
             </div>
           </div>
           
-          {/* Login/Profile section */}
-          <div className="hidden md:flex items-center space-x-2">
-            <Link 
+          {/* Login/Profile section with Theme Toggle */}
+          <div className="hidden md:flex items-center space-x-3">
+            <ThemeToggle />
+            <ModernButton 
               href="/login" 
-              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+              variant="primary" 
+              size="sm" 
+              className="shadow-md"
             >
               Log in
-            </Link>
-            <Link 
-              href="/register" 
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-            >
-              Sign up
-            </Link>
+            </ModernButton>
           </div>
           
           {/* Mobile menu button */}
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center md:hidden space-x-2">
+            <ThemeToggle />
             <button 
               type="button" 
               className="inline-flex items-center justify-center p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300"
@@ -191,19 +190,16 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="pt-4 pb-5 border-t border-gray-200 dark:border-gray-700">
-          <div className="flex items-center justify-center space-x-4 px-5">
-            <ModernButton href="/login" variant="ghost" size="sm" fullWidth onClick={() => setIsMenuOpen(false)}>
+          <div className="flex items-center justify-center px-5">
+            <ModernButton href="/login" variant="primary" size="md" fullWidth onClick={() => setIsMenuOpen(false)}>
               Log in
-            </ModernButton>
-            <ModernButton href="/register" variant="primary" size="sm" fullWidth onClick={() => setIsMenuOpen(false)}>
-              Sign up
             </ModernButton>
           </div>
         </div>
       </div>
       
       {/* Mobile bottom navigation bar */}
-      <div className="md:hidden mobile-nav">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 mobile-nav bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-lg z-30">
         <div className="flex justify-around items-center">
           <Link 
             href="/" 
