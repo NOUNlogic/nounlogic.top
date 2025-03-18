@@ -28,177 +28,179 @@ export default function Navbar() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav 
-      className={`app-bar sticky top-0 z-40 transition-all duration-300 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 ${
-        scrolled ? 'py-2 shadow-md' : 'py-4'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0 flex items-center group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-md mr-2 
-                transition-all duration-300 group-hover:rotate-6">
-                <span className="font-bold text-lg text-white">N</span>
+    <>
+      <nav 
+        className={`app-bar sticky top-0 z-40 transition-all duration-300 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 ${
+          scrolled ? 'py-2 shadow-md' : 'py-4'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center">
+              <Link href="/" className="flex-shrink-0 flex items-center group">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-md mr-2 
+                  transition-all duration-300 group-hover:rotate-6">
+                  <span className="font-bold text-lg text-white">N</span>
+                </div>
+                <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+                  NOUN Hub
+                </span>
+              </Link>
+              
+              {/* Desktop navigation */}
+              <div className="hidden md:ml-8 md:flex md:space-x-6">
+                <Link 
+                  href="/chat" 
+                  className={`nav-link px-3 py-2 text-sm font-medium transition-all duration-300 
+                    ${isActive('/chat') 
+                      ? 'text-blue-600 dark:text-blue-400' 
+                      : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                    }`}
+                >
+                  Chat
+                </Link>
+                <Link 
+                  href="/ai-help" 
+                  className={`nav-link px-3 py-2 text-sm font-medium transition-all duration-300 
+                    ${isActive('/ai-help') 
+                      ? 'text-blue-600 dark:text-blue-400' 
+                      : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                    }`}
+                >
+                  AI Help
+                </Link>
+                <Link 
+                  href="/news" 
+                  className={`nav-link px-3 py-2 text-sm font-medium transition-all duration-300 
+                    ${isActive('/news') 
+                      ? 'text-blue-600 dark:text-blue-400' 
+                      : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                    }`}
+                >
+                  News
+                </Link>
+                <Link 
+                  href="/resources" 
+                  className={`nav-link px-3 py-2 text-sm font-medium transition-all duration-300 
+                    ${isActive('/resources') 
+                      ? 'text-blue-600 dark:text-blue-400' 
+                      : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                    }`}
+                >
+                  Resources
+                </Link>
               </div>
-              <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
-                NOUN Hub
-              </span>
-            </Link>
+            </div>
             
-            {/* Desktop navigation */}
-            <div className="hidden md:ml-8 md:flex md:space-x-6">
-              <Link 
-                href="/chat" 
-                className={`nav-link px-3 py-2 text-sm font-medium transition-all duration-300 
-                  ${isActive('/chat') 
-                    ? 'text-blue-600 dark:text-blue-400' 
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                  }`}
+            {/* Login/Profile section with Theme Toggle */}
+            <div className="hidden md:flex items-center space-x-3">
+              <ThemeToggle />
+              <ModernButton 
+                href="/login" 
+                variant="primary" 
+                size="sm" 
+                className="shadow-md"
               >
-                Chat
-              </Link>
-              <Link 
-                href="/ai-help" 
-                className={`nav-link px-3 py-2 text-sm font-medium transition-all duration-300 
-                  ${isActive('/ai-help') 
-                    ? 'text-blue-600 dark:text-blue-400' 
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                  }`}
+                Log in
+              </ModernButton>
+            </div>
+            
+            {/* Mobile menu button */}
+            <div className="flex items-center md:hidden space-x-2">
+              <ThemeToggle />
+              <button 
+                type="button" 
+                className="inline-flex items-center justify-center p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-expanded={isMenuOpen ? "true" : "false"}
               >
-                AI Help
-              </Link>
-              <Link 
-                href="/news" 
-                className={`nav-link px-3 py-2 text-sm font-medium transition-all duration-300 
-                  ${isActive('/news') 
-                    ? 'text-blue-600 dark:text-blue-400' 
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                  }`}
-              >
-                News
-              </Link>
-              <Link 
-                href="/resources" 
-                className={`nav-link px-3 py-2 text-sm font-medium transition-all duration-300 
-                  ${isActive('/resources') 
-                    ? 'text-blue-600 dark:text-blue-400' 
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                  }`}
-              >
-                Resources
-              </Link>
+                <span className="sr-only">Open main menu</span>
+                
+                {/* Animated hamburger icon */}
+                <div className="w-6 h-6 flex flex-col justify-around items-center">
+                  <span className={`w-5 h-0.5 bg-current transform transition-all duration-300 
+                    ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}
+                  ></span>
+                  <span className={`w-5 h-0.5 bg-current transition-all duration-300 
+                    ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}
+                  ></span>
+                  <span className={`w-5 h-0.5 bg-current transform transition-all duration-300 
+                    ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}
+                  ></span>
+                </div>
+              </button>
             </div>
           </div>
-          
-          {/* Login/Profile section with Theme Toggle */}
-          <div className="hidden md:flex items-center space-x-3">
-            <ThemeToggle />
-            <ModernButton 
-              href="/login" 
-              variant="primary" 
-              size="sm" 
-              className="shadow-md"
+        </div>
+        
+        {/* Mobile menu with animation */}
+        <div 
+          className={`
+            md:hidden glass dark:glass-dark absolute left-0 right-0
+            transform transition-all duration-300 ease-in-out
+            ${isMenuOpen 
+              ? 'opacity-100 translate-y-0 pointer-events-auto' 
+              : 'opacity-0 -translate-y-5 pointer-events-none'}
+            shadow-xl rounded-b-2xl mx-4 mt-2
+          `}
+        >
+          <div className="pt-3 pb-4 space-y-1 px-4">
+            <Link 
+              href="/chat" 
+              className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300
+                ${isActive('/chat')
+                  ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
+                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'}
+              `}
+              onClick={() => setIsMenuOpen(false)}
             >
-              Log in
-            </ModernButton>
-          </div>
-          
-          {/* Mobile menu button */}
-          <div className="flex items-center md:hidden space-x-2">
-            <ThemeToggle />
-            <button 
-              type="button" 
-              className="inline-flex items-center justify-center p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-expanded={isMenuOpen ? "true" : "false"}
+              Chat
+            </Link>
+            <Link 
+              href="/ai-help" 
+              className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300
+                ${isActive('/ai-help')
+                  ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
+                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'}
+              `}
+              onClick={() => setIsMenuOpen(false)}
             >
-              <span className="sr-only">Open main menu</span>
-              
-              {/* Animated hamburger icon */}
-              <div className="w-6 h-6 flex flex-col justify-around items-center">
-                <span className={`w-5 h-0.5 bg-current transform transition-all duration-300 
-                  ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}
-                ></span>
-                <span className={`w-5 h-0.5 bg-current transition-all duration-300 
-                  ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}
-                ></span>
-                <span className={`w-5 h-0.5 bg-current transform transition-all duration-300 
-                  ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}
-                ></span>
-              </div>
-            </button>
+              AI Help
+            </Link>
+            <Link 
+              href="/news" 
+              className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300
+                ${isActive('/news')
+                  ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
+                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'}
+              `}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              News
+            </Link>
+            <Link 
+              href="/resources"
+              className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300
+                ${isActive('/resources')
+                  ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
+                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'}
+              `}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Resources
+            </Link>
+          </div>
+          <div className="pt-4 pb-5 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex items-center justify-center px-5">
+              <ModernButton href="/login" variant="primary" size="md" fullWidth onClick={() => setIsMenuOpen(false)}>
+                Log in
+              </ModernButton>
+            </div>
           </div>
         </div>
-      </div>
+      </nav>
       
-      {/* Mobile menu with animation */}
-      <div 
-        className={`
-          md:hidden glass dark:glass-dark absolute left-0 right-0
-          transform transition-all duration-300 ease-in-out
-          ${isMenuOpen 
-            ? 'opacity-100 translate-y-0 pointer-events-auto' 
-            : 'opacity-0 -translate-y-5 pointer-events-none'}
-          shadow-xl rounded-b-2xl mx-4 mt-2
-        `}
-      >
-        <div className="pt-3 pb-4 space-y-1 px-4">
-          <Link 
-            href="/chat" 
-            className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300
-              ${isActive('/chat')
-                ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
-                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'}
-            `}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Chat
-          </Link>
-          <Link 
-            href="/ai-help" 
-            className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300
-              ${isActive('/ai-help')
-                ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
-                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'}
-            `}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            AI Help
-          </Link>
-          <Link 
-            href="/news" 
-            className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300
-              ${isActive('/news')
-                ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
-                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'}
-            `}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            News
-          </Link>
-          <Link 
-            href="/resources"
-            className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300
-              ${isActive('/resources')
-                ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
-                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'}
-            `}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Resources
-          </Link>
-        </div>
-        <div className="pt-4 pb-5 border-t border-gray-200 dark:border-gray-700">
-          <div className="flex items-center justify-center px-5">
-            <ModernButton href="/login" variant="primary" size="md" fullWidth onClick={() => setIsMenuOpen(false)}>
-              Log in
-            </ModernButton>
-          </div>
-        </div>
-      </div>
-      
-      {/* Mobile bottom navigation bar */}
+      {/* Mobile bottom navigation bar - separated from top navbar */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 mobile-nav bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-lg z-30">
         <div className="flex justify-around items-center">
           <Link 
@@ -246,6 +248,6 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
-    </nav>
+    </>
   );
 }

@@ -397,8 +397,6 @@ body {
   border-top: 1px solid var(--glass-border);
   padding: 0.5rem 0;
   z-index: 40;
-  transform: translateY(0);
-  transition: transform 0.3s ease;
 }
 
 .dark .mobile-nav {
@@ -406,8 +404,11 @@ body {
   border-top: 1px solid var(--glass-border-dark);
 }
 
-.mobile-nav.hidden {
-  transform: translateY(100%);
+/* Add padding to the bottom of the page content to prevent overlap with mobile nav */
+@media (max-width: 768px) {
+  main {
+    padding-bottom: 4rem;
+  }
 }
 
 /* 3D button effect */
