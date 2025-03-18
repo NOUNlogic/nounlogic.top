@@ -27,14 +27,14 @@ export const metadata = {
 
 export default function AIHelpPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">AI Help Center</h1>
-      <p className="mb-4">
+    <div className="container mx-auto px-4 py-8 bg-white dark:bg-gray-900">
+      <h1 className="text-3xl font-bold mb-6 text-black dark:text-white">AI Help Center</h1>
+      <p className="mb-4 text-black dark:text-gray-300">
         Welcome to our AI Help section. Here you can find resources and assistance powered by artificial intelligence.
       </p>
-      <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
-        <h2 className="text-xl font-semibold mb-4">How can we assist you today?</h2>
-        <p>Content for the AI Help page coming soon...</p>
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+        <h2 className="text-xl font-semibold mb-4 text-black dark:text-white">How can we assist you today?</h2>
+        <p className="text-black dark:text-gray-300">Content for the AI Help page coming soon...</p>
       </div>
     </div>
   );

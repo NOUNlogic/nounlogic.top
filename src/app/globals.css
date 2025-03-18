@@ -54,15 +54,27 @@
 
 /* Essential utility classes that can't be easily replicated with Tailwind */
 .glass {
-  background: var(--glass-background);
+  background: rgba(255, 255, 255, 1);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(230, 230, 230, 1);
 }
 
 .dark .glass {
   background: var(--glass-background-dark);
   border: 1px solid var(--glass-border-dark);
+}
+
+.glass-morphism {
+  background: white;
+  border: 1px solid rgba(230, 230, 230, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-morphism {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .slide-up {

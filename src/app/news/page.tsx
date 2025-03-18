@@ -97,22 +97,22 @@ export default function NewsPage() {
   const featuredNews = newsItems.find(item => item.featured);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-50">Latest News</h1>
-      <p className="mb-6 text-gray-700 dark:text-gray-300">
+    <div className="container mx-auto px-4 py-8 bg-white dark:bg-gray-900">
+      <h1 className="text-3xl font-bold mb-6 text-black dark:text-gray-50">Latest News</h1>
+      <p className="mb-6 text-black dark:text-gray-300">
         Stay updated with the latest announcements, articles, and news from our team.
       </p>
       <div className="space-y-6">
         <article className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-          <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">News Article Title</h2>
+          <h2 className="text-xl font-semibold mb-2 text-black dark:text-gray-100">News Article Title</h2>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Published on: June 10, 2023</p>
-          <p className="text-gray-700 dark:text-gray-300">News content coming soon...</p>
+          <p className="text-black dark:text-gray-300">News content coming soon...</p>
         </article>
         
         <article className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-          <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Another News Article</h2>
+          <h2 className="text-xl font-semibold mb-2 text-black dark:text-gray-100">Another News Article</h2>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Published on: May 28, 2023</p>
-          <p className="text-gray-700 dark:text-gray-300">More news content coming soon...</p>
+          <p className="text-black dark:text-gray-300">More news content coming soon...</p>
         </article>
       </div>
     </div>

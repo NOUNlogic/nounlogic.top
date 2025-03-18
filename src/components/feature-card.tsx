@@ -20,9 +20,9 @@ export default function FeatureCard({ title, description, icon, delay = 0 }: Fea
             <div className="p-3 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
               {getIcon(icon)}
             </div>
-            <h3 className="ml-4 font-bold text-xl">{title}</h3>
+            <h3 className="ml-4 font-bold text-xl text-black dark:text-white">{title}</h3>
           </div>
-          <p className="text-gray-600 dark:text-gray-400 flex-grow">{description}</p>
+          <p className="text-black dark:text-gray-400 flex-grow">{description}</p>
         </div>
       </div>
     </ScrollReveal>

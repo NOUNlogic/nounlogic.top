@@ -138,7 +138,7 @@ export default function ChatPage() {
   };
 
   return (
-    <div className="flex h-[calc(100vh-4rem)] bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="flex h-[calc(100vh-4rem)] bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800">
       {/* Enhanced sidebar with glass morphism */}
       <div className="w-full sm:w-80 glass-morphism overflow-hidden flex flex-col">
         {/* Search bar with floating animation */}
@@ -147,10 +147,10 @@ export default function ChatPage() {
             <input
               type="text"
               placeholder="Search..."
-              className="w-full p-3 pl-12 rounded-xl bg-white/50 dark:bg-gray-800/50 
+              className="w-full p-3 pl-12 rounded-xl bg-white dark:bg-gray-800/50 
                 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50
                 focus:ring-2 ring-primary/20 transition-all duration-300
-                group-hover:shadow-lg"
+                group-hover:shadow-lg text-black dark:text-white"
             />
             <svg
               className="absolute left-4 top-4 h-5 w-5 text-gray-400 transition-transform duration-300
@@ -192,8 +192,8 @@ export default function ChatPage() {
             <div
               key={contact.id}
               className={`slide-up flex items-center p-4 cursor-pointer
-                transition-all duration-300 hover:bg-white/50 dark:hover:bg-gray-800/50
-                ${activeChat === contact.id ? 'bg-white/80 dark:bg-gray-800/80' : ''}`}
+                transition-all duration-300 hover:bg-white dark:hover:bg-gray-800/50
+                ${activeChat === contact.id ? 'bg-white dark:bg-gray-800/80' : ''}`}
               style={{ animationDelay: `${index * 0.1}s` }}
               onClick={() => setActiveChat(contact.id)}
             >
@@ -213,12 +213,12 @@ export default function ChatPage() {
               </div>
               <div className="ml-4 flex-1">
                 <div className="flex items-center justify-between">
-                  <h3 className="font-semibold text-gray-900 dark:text-gray-100">
+                  <h3 className="font-semibold text-black dark:text-gray-100">
                     {contact.name}
                   </h3>
                   <span className="text-xs text-gray-500">{contact.time}</span>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 truncate">
+                <p className="text-sm text-black dark:text-gray-400 truncate">
                   {contact.lastMessage}
                 </p>
               </div>
@@ -228,7 +228,7 @@ export default function ChatPage() {
       </div>
 
       {/* Enhanced chat area */}
-      <div className="hidden sm:flex flex-col flex-1 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
+      <div className="hidden sm:flex flex-col flex-1 bg-white dark:bg-gray-900/50 backdrop-blur-sm">
         {activeChat ? (
           <div className="flex-1 flex flex-col fade-scale">
             {/* Chat header with animations */}
@@ -240,7 +240,7 @@ export default function ChatPage() {
                   className="w-10 h-10 rounded-full shadow-md"
                 />
                 <div className="ml-4">
-                  <h2 className="font-semibold text-gray-900 dark:text-gray-100">
+                  <h2 className="font-semibold text-black dark:text-gray-100">
                     Sarah Johnson
                   </h2>
                   <p className="text-xs text-green-500">Online</p>
@@ -351,8 +351,8 @@ export default function ChatPage() {
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center float p-8">
               <div className="text-6xl mb-6">👋</div>
-              <h2 className="text-2xl font-bold mb-2 text-gray-700 dark:text-gray-300">Select a conversation</h2>
-              <p className="text-gray-500 dark:text-gray-400 max-w-md">
+              <h2 className="text-2xl font-bold mb-2 text-black dark:text-gray-300">Select a conversation</h2>
+              <p className="text-black dark:text-gray-400 max-w-md">
                 Choose from your existing conversations or start a new chat with a fellow student.
               </p>
             </div>
