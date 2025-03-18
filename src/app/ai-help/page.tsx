@@ -1,6 +1,5 @@
-'use client';
+// 'use client';
 
-import { useState, useRef, useEffect } from 'react';
 import AnimatedElement from '@/components/ui/animated-element';
 import ModernCard from '@/components/ui/modern-card';
 import ModernButton from '@/components/ui/modern-button';

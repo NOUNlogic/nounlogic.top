@@ -4,11 +4,6 @@ import image from 'next/image';
 import { useState } from 'react';
 import React from 'react';
 
-export const metadata = {
-  title: 'News',
-  description: 'Latest news and updates',
-};
-
 type NewsItem = {
   id: string;
   title: string;
