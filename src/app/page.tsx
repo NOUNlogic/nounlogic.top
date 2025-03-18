@@ -19,13 +19,13 @@ export default function Home() {
         
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <AnimatedElement animation="fade-in" className="mb-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight text-white drop-shadow-lg">
               National Open University of Nigeria <span className="block mt-2">Student Hub</span>
             </h1>
           </AnimatedElement>
           
           <AnimatedElement animation="slide-up" delay={300} className="mb-8">
-            <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-white/90 drop-shadow-md">
               Your all-in-one platform for student collaboration, resources, and community
             </p>
           </AnimatedElement>
