@@ -111,7 +111,12 @@ export default function Home() {
           </ScrollReveal>
           
           <ScrollReveal delay={2}>
-            <ModernButton href="/register" variant="primary" size="lg" className="bg-white text-blue-700 hover:bg-blue-50">
+            <ModernButton 
+              href="/register" 
+              variant="primary" 
+              size="lg" 
+              className=" text-blue-700 hover:bg-blue-50 hover:text-blue-800 border-2 border-white/20"
+            >
               Create Your Account
             </ModernButton>
           </ScrollReveal>
