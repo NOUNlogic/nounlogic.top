@@ -7,10 +7,10 @@ import AnimatedElement from '@/components/ui/animated-element';
 import ScrollReveal from '@/components/ui/scroll-reveal';
 import React from 'react';
 
-export const metadata = {
-  title: 'Resources',
-  description: 'Helpful resources and materials',
-};
+// export const metadata = {
+//   title: 'Resources',
+//   description: 'Helpful resources and materials',
+// };
 
 type ResourceType = 'Course Material' | 'Past Question' | 'Textbook' | 'Guide' | 'Template' | 'Video';
 type ResourceFaculty = 'All' | 'Science' | 'Arts' | 'Business' | 'Law' | 'Education' | 'Social Sciences' | 'Engineering';
