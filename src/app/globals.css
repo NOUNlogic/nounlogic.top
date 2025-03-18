@@ -36,11 +36,11 @@
   --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.04);
   
   /* Advanced glass effect */
-  --glass-background: rgba(255, 255, 255, 0.7);
-  --glass-background-dark: rgba(30, 41, 59, 0.7);
+  --glass-background: rgba(255, 255, 255, 0.85);
+  --glass-background-dark: rgba(15, 23, 42, 0.85);
   --glass-border: rgba(255, 255, 255, 0.5);
   --glass-border-dark: rgba(255, 255, 255, 0.1);
-  --glass-blur: 12px;
+  --glass-blur: 16px;
   
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -56,6 +56,13 @@
   --radius-xl: 1.5rem;
   --radius-2xl: 2rem;
   --radius-full: 9999px;
+
+  /* Modern color system */
+  --primary-gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  
+  /* Advanced animations */
+  --spring-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --smooth-spring: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @theme inline {
@@ -117,8 +124,9 @@ body {
 }
 
 .slide-up {
-  transform: translateY(20px);
-  transition: opacity 0.5s ease-in-out, transform 0.5s var(--transition-bounce);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.6s var(--spring-bounce) forwards;
 }
 
 .slide-up.animate-active {
@@ -143,6 +151,12 @@ body {
 
 .animate-active {
   opacity: 1 !important;
+}
+
+.fade-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeScale 0.5s var(--smooth-spring) forwards;
 }
 
 /* Enhanced button hover effects */
@@ -208,6 +222,18 @@ body {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   25% { transform: translateY(-5px) rotate(-1deg); }
   75% { transform: translateY(5px) rotate(1deg); }
+}
+
+@keyframes fadeScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatAnimation {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
 /* Enhanced scroll animations */
@@ -394,4 +420,20 @@ body {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* Modern glass morphism */
+.glass-morphism {
+  background: var(--glass-background);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark .glass-morphism {
+  background: var(--glass-background-dark);
+}
+
+.float {
+  animation: floatAnimation 3s ease-in-out infinite;
 }

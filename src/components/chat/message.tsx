@@ -11,24 +11,19 @@ type MessageProps = {
 
 export default function Message({ content, timestamp, isOwn, sender }: MessageProps) {
   const messageRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    if (messageRef.current) {
-      messageRef.current.classList.add('animate-message');
-    }
-  }, []);
-  
+
   return (
     <div 
-      ref={messageRef} 
-      className={`flex ${isOwn ? 'justify-end' : 'justify-start'} mb-4 opacity-0`}
+      ref={messageRef}
+      className={`flex ${isOwn ? 'justify-end' : 'justify-start'} mb-4`}
     >
       <div
         className={`
-          max-w-[70%] rounded-2xl p-3 shadow-sm
+          max-w-[70%] rounded-2xl p-4 shadow-lg
+          transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5
           ${isOwn
-            ? 'bg-blue-600 text-white'
-            : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100'
+            ? 'bg-primary text-white'
+            : 'glass-morphism dark:bg-gray-800/90'
           }
         `}
       >

@@ -45,7 +45,7 @@ export function useInteractiveCursor({
     cursor.style.zIndex = '9999';
     cursor.style.opacity = '0';
     cursor.style.transform = 'translate(-50%, -50%)';
-    cursor.style.transition = 'transform 0.1s, width 0.3s, height 0.3s, background-color 0.3s';
+    cursor.style.transition = 'transform 0.2s var(--spring-bounce), width 0.3s var(--smooth-spring), height 0.3s var(--smooth-spring)';
     cursor.style.mixBlendMode = 'difference';
     document.body.appendChild(cursor);
     cursorRef.current = cursor;
@@ -117,19 +117,7 @@ export function useInteractiveCursor({
       setIsHovering(isHoveringMagnetic);
       
       if (isHoveringMagnetic && magneticElement && cursorRef.current) {
-        const rect = magneticElement.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        
-        // Calculate distance from mouse to center of element
-        const distX = e.clientX - centerX;
-        const distY = e.clientY - centerY;
-        
-        // Apply magnetic effect - pull cursor towards center
-        const x = e.clientX - distX * magneticStrength;
-        const y = e.clientY - distY * magneticStrength;
-        
-        mousePosition.current = { x, y };
+        applyMagneticEffect(e, magneticElement);
         
         // Scale up cursor on hover
         cursorRef.current.style.width = `${size * 1.5}px`;
@@ -137,6 +125,22 @@ export function useInteractiveCursor({
       } else if (cursorRef.current) {
         cursorRef.current.style.width = `${size}px`;
         cursorRef.current.style.height = `${size}px`;
+      }
+    };
+    
+    // Enhanced magnetic effect
+    const applyMagneticEffect = (e: MouseEvent, element: HTMLElement) => {
+      const rect = element.getBoundingClientRect();
+      const distX = e.clientX - (rect.left + rect.width / 2);
+      const distY = e.clientY - (rect.top + rect.height / 2);
+      const dist = Math.sqrt(distX * distX + distY * distY);
+      const maxDist = 100;
+      
+      if (dist < maxDist) {
+        const strength = (1 - dist / maxDist) * magneticStrength;
+        const x = e.clientX - distX * strength;
+        const y = e.clientY - distY * strength;
+        mousePosition.current = { x, y };
       }
     };
     
