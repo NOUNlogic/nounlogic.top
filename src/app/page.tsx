@@ -1,4 +1,3 @@
-import Link from "next/link";
 import FeatureCard from "@/components/feature-card";
 import ModernButton from "@/components/ui/modern-button";
 import ParallaxSection from "@/components/ui/parallax-section";
