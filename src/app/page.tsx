@@ -43,14 +43,16 @@ export default function Home() {
       </section>
 
       {/* Features section with scroll reveal */}
-      <section className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+      <section className="py-20 px-6 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">Everything You Need</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-black dark:text-white">
+              Everything You Need
+            </h2>
           </ScrollReveal>
           
           <ScrollReveal delay={1}>
-            <p className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-16">
+            <p className="text-center text-black dark:text-white max-w-2xl mx-auto mb-16">
               Connect with fellow students, access resources, and stay updated with everything happening at NOUN.
             </p>
           </ScrollReveal>
@@ -114,7 +116,7 @@ export default function Home() {
               href="/register" 
               variant="primary" 
               size="lg" 
-              className=" text-blue-700 hover:bg-blue-50 hover:text-blue-800 border-2 border-white/20"
+              className="text-blue-700 hover:bg-blue-50 hover:text-blue-800 border-2 border-white/20"
             >
               Create Your Account
             </ModernButton>

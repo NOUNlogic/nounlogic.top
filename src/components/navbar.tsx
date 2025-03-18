@@ -30,7 +30,7 @@ export default function Navbar() {
   return (
     <>
       <nav 
-        className={`sticky top-0 z-40 transition-all duration-300 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 ${
+        className={`sticky top-0 z-40 transition-all duration-300 bg-white dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 ${
           scrolled ? 'py-2 shadow-md' : 'py-4'
         }`}
       >
@@ -54,7 +54,7 @@ export default function Navbar() {
                   className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative
                     ${isActive('/chat') 
                       ? 'text-blue-600 dark:text-blue-400' 
-                      : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                      : 'text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400'
                     }`}
                 >
                   <span>Chat</span>
@@ -67,7 +67,7 @@ export default function Navbar() {
                   className={`nav-link px-3 py-2 text-sm font-medium transition-all duration-300 
                     ${isActive('/ai-help') 
                       ? 'text-blue-600 dark:text-blue-400' 
-                      : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                      : 'text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400'
                     }`}
                 >
                   AI Help
@@ -77,7 +77,7 @@ export default function Navbar() {
                   className={`nav-link px-3 py-2 text-sm font-medium transition-all duration-300 
                     ${isActive('/news') 
                       ? 'text-blue-600 dark:text-blue-400' 
-                      : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                      : 'text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400'
                     }`}
                 >
                   News
@@ -87,7 +87,7 @@ export default function Navbar() {
                   className={`nav-link px-3 py-2 text-sm font-medium transition-all duration-300 
                     ${isActive('/resources') 
                       ? 'text-blue-600 dark:text-blue-400' 
-                      : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                      : 'text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400'
                     }`}
                 >
                   Resources
@@ -153,7 +153,7 @@ export default function Navbar() {
               className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300
                 ${isActive('/chat')
                   ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'}
+                  : 'text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800'}
               `}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -164,7 +164,7 @@ export default function Navbar() {
               className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300
                 ${isActive('/ai-help')
                   ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'}
+                  : 'text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800'}
               `}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -175,7 +175,7 @@ export default function Navbar() {
               className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300
                 ${isActive('/news')
                   ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'}
+                  : 'text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800'}
               `}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -186,7 +186,7 @@ export default function Navbar() {
               className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300
                 ${isActive('/resources')
                   ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'}
+                  : 'text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800'}
               `}
               onClick={() => setIsMenuOpen(false)}
             >
