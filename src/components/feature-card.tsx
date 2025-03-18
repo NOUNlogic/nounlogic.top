@@ -1,10 +1,14 @@
+import ModernCard from './ui/modern-card';
+import ScrollReveal from './ui/scroll-reveal';
+
 type FeatureCardProps = {
   title: string;
   description: string;
   icon: string;
+  delay?: 1 | 2 | 3 | 4;
 };
 
-export default function FeatureCard({ title, description, icon }: FeatureCardProps) {
+export default function FeatureCard({ title, description, icon, delay }: FeatureCardProps) {
   const getIcon = () => {
     switch (icon) {
       case 'users':
@@ -53,14 +57,16 @@ export default function FeatureCard({ title, description, icon }: FeatureCardPro
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-      <div className="flex flex-col items-center text-center">
-        <div className="mb-4">
-          {getIcon()}
+    <ScrollReveal delay={delay}>
+      <ModernCard hoverable className="h-full transition-all duration-300">
+        <div className="flex flex-col items-center text-center">
+          <div className="mb-4 transform transition-transform duration-300 group-hover:scale-110">
+            {getIcon()}
+          </div>
+          <h3 className="text-xl font-semibold mb-2">{title}</h3>
+          <p className="text-gray-600 dark:text-gray-300">{description}</p>
         </div>
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-gray-600 dark:text-gray-300">{description}</p>
-      </div>
-    </div>
+      </ModernCard>
+    </ScrollReveal>
   );
 }

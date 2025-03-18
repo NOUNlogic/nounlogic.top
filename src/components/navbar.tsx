@@ -60,30 +60,36 @@ export default function Navbar() {
         </div>
       </div>
       
-      {/* Mobile menu */}
-      <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden bg-white dark:bg-gray-800 shadow-lg`}>
+      {/* Mobile menu with animation */}
+      <div 
+        className={`
+          md:hidden bg-white dark:bg-gray-800 shadow-lg 
+          transform transition-all duration-300 ease-in-out
+          ${isMenuOpen ? 'opacity-100 scale-y-100 origin-top' : 'opacity-0 scale-y-0 origin-top'}
+        `}
+      >
         <div className="pt-2 pb-3 space-y-1">
-          <Link href="/chat" className="block pl-3 pr-4 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+          <Link href="/chat" className="block pl-3 pr-4 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-600">
             Chat
           </Link>
-          <Link href="/ai-help" className="block pl-3 pr-4 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+          <Link href="/ai-help" className="block pl-3 pr-4 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-600">
             AI Help
           </Link>
-          <Link href="/news" className="block pl-3 pr-4 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+          <Link href="/news" className="block pl-3 pr-4 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-600">
             News
           </Link>
-          <Link href="/resources" className="block pl-3 pr-4 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+          <Link href="/resources" className="block pl-3 pr-4 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-600">
             Resources
           </Link>
         </div>
         <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
-          <div className="flex items-center px-4">
-            <Link href="/login" className="block text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+          <div className="flex items-center justify-center space-x-4 p-4">
+            <ModernButton href="/login" variant="ghost" size="sm" fullWidth>
               Log in
-            </Link>
-            <Link href="/register" className="block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium ml-2">
+            </ModernButton>
+            <ModernButton href="/register" variant="primary" size="sm" fullWidth>
               Sign up
-            </Link>
+            </ModernButton>
           </div>
         </div>
       </div>
