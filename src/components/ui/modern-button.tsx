@@ -36,11 +36,11 @@ export default function ModernButton({
   
   // Variant styles
   const variantStyles = {
-    primary: 'bg-primary text-white hover:bg-primary-dark shadow-md hover:shadow-lg',
-    secondary: 'bg-secondary text-white hover:bg-secondary-dark shadow-md hover:shadow-lg',
-    accent: 'bg-accent text-white hover:bg-accent-dark shadow-md hover:shadow-lg',
-    outline: 'bg-transparent border-2 border-gray-medium hover:bg-gray-light dark:hover:bg-gray-dark/20',
-    ghost: 'bg-transparent hover:bg-gray-light dark:hover:bg-gray-dark/20',
+    primary: 'bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg',
+    secondary: 'bg-purple-600 text-white hover:bg-purple-700 shadow-md hover:shadow-lg',
+    accent: 'bg-pink-600 text-white hover:bg-pink-700 shadow-md hover:shadow-lg',
+    outline: 'bg-transparent border-2 border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800',
+    ghost: 'bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800',
   };
   
   // Animation class

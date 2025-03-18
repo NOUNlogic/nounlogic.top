@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
 import ModernCard from '@/components/ui/modern-card';
 import Message from '@/components/chat/message';
 import AnimatedElement from '@/components/ui/animated-element';
