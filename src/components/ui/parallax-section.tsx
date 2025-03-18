@@ -45,13 +45,13 @@ export default function ParallaxSection({
   }, [speed]);
   
   return (
-    <div ref={sectionRef} className={`parallax-container ${className}`}>
+    <div ref={sectionRef} className={`relative ${className}`}>
       <div 
         style={{ 
           transform: `translateY(${offset}px)`,
           transition: 'transform 0.1s cubic-bezier(0.2, 0.8, 0.2, 1)'
         }}
-        className="parallax-content"
+        className="w-full h-full"
       >
         {children}
       </div>

@@ -45,12 +45,52 @@ export default function AnimatedElement({
     };
   }, [threshold]);
 
+  // Use Tailwind classes for animations instead of custom CSS classes
+  const getAnimationClass = () => {
+    if (!isVisible) return 'opacity-0';
+    
+    switch (animation) {
+      case 'fade-in':
+        return 'opacity-100 transition-opacity duration-700';
+      case 'slide-up':
+        return 'opacity-100 translate-y-0 transition-all duration-700';
+      case 'slide-down':
+        return 'opacity-100 translate-y-0 transition-all duration-700';
+      case 'scale-in':
+        return 'opacity-100 scale-100 transition-all duration-500';
+      case 'bounce':
+        return 'opacity-100 animate-bounce';
+      case 'fade-scale':
+        return 'opacity-100 scale-100 transition-all duration-500';
+      default:
+        return 'opacity-100';
+    }
+  };
+  
+  const getInitialClass = () => {
+    switch (animation) {
+      case 'fade-in':
+        return 'opacity-0';
+      case 'slide-up':
+        return 'opacity-0 translate-y-8';
+      case 'slide-down':
+        return 'opacity-0 -translate-y-8';
+      case 'scale-in':
+        return 'opacity-0 scale-95';
+      case 'bounce':
+        return 'opacity-0';
+      case 'fade-scale':
+        return 'opacity-0 scale-95';
+      default:
+        return 'opacity-0';
+    }
+  };
+
   return (
     <div
       ref={elementRef}
-      className={`${animation} ${isVisible ? 'animate-active' : 'animate-initial'} ${className}`}
+      className={`transform ${isVisible ? getAnimationClass() : getInitialClass()} ${className}`}
       style={{ 
-        animationDelay: `${delay}ms`, 
         transitionDelay: `${delay}ms` 
       }}
     >

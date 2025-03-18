@@ -25,7 +25,8 @@ export default function ScrollReveal({
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setTimeout(() => {
-              entry.target.classList.add('active');
+              entry.target.classList.add('opacity-100');
+              entry.target.classList.remove('opacity-0', 'translate-y-8');
             }, delay * 150);
             observer.unobserve(entry.target);
           }
@@ -47,7 +48,8 @@ export default function ScrollReveal({
   return (
     <div 
       ref={elementRef} 
-      className={`reveal ${delay > 0 ? `reveal-delay-${delay}` : ''}`}
+      className={`opacity-0 translate-y-8 transform transition-all duration-700 ease-out`}
+      style={{ transitionDelay: `${delay * 150}ms` }}
     >
       {children}
     </div>

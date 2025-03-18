@@ -30,7 +30,7 @@ export default function Navbar() {
   return (
     <>
       <nav 
-        className={`app-bar sticky top-0 z-40 transition-all duration-300 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 ${
+        className={`sticky top-0 z-40 transition-all duration-300 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 ${
           scrolled ? 'py-2 shadow-md' : 'py-4'
         }`}
       >
@@ -51,13 +51,16 @@ export default function Navbar() {
               <div className="hidden md:ml-8 md:flex md:space-x-6">
                 <Link 
                   href="/chat" 
-                  className={`nav-link px-3 py-2 text-sm font-medium transition-all duration-300 
+                  className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative
                     ${isActive('/chat') 
                       ? 'text-blue-600 dark:text-blue-400' 
                       : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
                     }`}
                 >
-                  Chat
+                  <span>Chat</span>
+                  {isActive('/chat') && (
+                    <span className="absolute bottom-0 left-1/2 w-1/2 h-0.5 bg-blue-600 dark:bg-blue-400 transform -translate-x-1/2"></span>
+                  )}
                 </Link>
                 <Link 
                   href="/ai-help" 
@@ -136,7 +139,7 @@ export default function Navbar() {
         {/* Mobile menu with animation */}
         <div 
           className={`
-            md:hidden glass dark:glass-dark absolute left-0 right-0
+            md:hidden glass absolute left-0 right-0
             transform transition-all duration-300 ease-in-out
             ${isMenuOpen 
               ? 'opacity-100 translate-y-0 pointer-events-auto' 
@@ -200,8 +203,8 @@ export default function Navbar() {
         </div>
       </nav>
       
-      {/* Mobile bottom navigation bar - separated from top navbar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 mobile-nav bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-lg z-30">
+      {/* Mobile bottom navigation bar */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 shadow-lg z-30 py-2">
         <div className="flex justify-around items-center">
           <Link 
             href="/" 
